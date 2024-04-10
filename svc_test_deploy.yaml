@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-test
+  labels:
+    app: svc-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svc-test
+  template:
+    metadata:
+      labels:
+        app: svc-test
+    spec:
+      containers:
+      - name: svc-test
+        image: nginx:alpine
